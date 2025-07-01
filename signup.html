@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Volunteer Signup - HopeBridge Foundation</title>
+    <title>Volunteer Signup & Donation - HopeBridge Foundation</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -33,10 +33,10 @@
 <body class="bg-baby-pink flex flex-col min-h-screen items-center justify-center p-4">
     <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-xl w-full transform transition-all duration-300 hover:scale-105">
         <h1 class="text-3xl md:text-4xl font-extrabold text-royal-purple mb-6 text-center">
-            Join Our Volunteer Team!
+            Join Our Volunteer Team or Make a Donation!
         </h1>
         <p class="text-md md:text-lg text-gray-600 mb-8 text-center">
-            Your time and effort can bring immense joy and positive change. Please fill out the form below to sign up.
+            Your time, effort, or contribution can bring immense joy and positive change. Please fill out the form below.
         </p>
 
         <form action="thankyou.html" method="GET" class="space-y-6">
@@ -49,15 +49,35 @@
                 <input type="email" id="email" name="email" placeholder="john.doe@example.com" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-baby-pink focus:border-transparent transition duration-200" required>
             </div>
             <div>
-                <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">Phone Number</label>
+                <label for="phone" class="block text-gray-700 text-sm font-semibold mb-2">Phone Number (Optional)</label>
                 <input type="tel" id="phone" name="phone" placeholder="(123) 456-7890" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-baby-pink focus:border-transparent transition duration-200">
             </div>
+
+            <!-- New: Amount Field -->
             <div>
-                <label for="interest" class="block text-gray-700 text-sm font-semibold mb-2">Areas of Interest / Message</label>
+                <label for="amount" class="block text-gray-700 text-sm font-semibold mb-2">Donation Amount (Optional)</label>
+                <input type="number" id="amount" name="amount" placeholder="e.g., 500" min="0" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-baby-pink focus:border-transparent transition duration-200">
+            </div>
+
+            <!-- New: Payment Mode Field -->
+            <div>
+                <label for="payment_mode" class="block text-gray-700 text-sm font-semibold mb-2">Preferred Payment Mode (Optional)</label>
+                <select id="payment_mode" name="payment_mode" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-baby-pink focus:border-transparent transition duration-200">
+                    <option value="">Select a mode</option>
+                    <option value="gpay">GPay</option>
+                    <option value="paytm">Paytm</option>
+                    <option value="bank_transfer">Bank Transfer</option>
+                    <option value="credit_card">Credit Card</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="interest" class="block text-gray-700 text-sm font-semibold mb-2">Areas of Interest / Message (for Volunteers)</label>
                 <textarea id="interest" name="interest" rows="4" placeholder="Tell us how you'd like to contribute or any questions you have..." class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-baby-pink focus:border-transparent transition duration-200"></textarea>
             </div>
             <button type="submit" class="w-full bg-gold text-royal-purple font-bold py-3 px-6 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-75">
-                Submit Your Application
+                Submit Your Application / Donation
             </button>
         </form>
     </div>
