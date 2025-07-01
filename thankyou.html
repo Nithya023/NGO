@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P9TC7VLB');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thank You! - HopeBridge Foundation</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P9TC7VLB');</script>
+    <!-- End Google Tag Manager -->
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -36,12 +36,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family: 'Inter', sans-serif;
         }
     </style>
+    <!-- Google Analytics 4 (GA4) Tracking Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_GA4_MEASUREMENT_ID'); // Replace with your GA4 Measurement ID
+    </script>
 </head>
 <body class="bg-baby-pink flex flex-col min-h-screen items-center justify-center p-4">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9TC7VLB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9TC7VLB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-2xl w-full text-center transform transition-all duration-300 hover:scale-105">
         <h1 class="text-4xl md:text-5xl font-extrabold text-royal-purple mb-6 leading-tight">
             Thank You for Your Support!
@@ -53,7 +61,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <p class="text-md md:text-lg text-gray-600 mb-8">
             We will be in touch shortly with more information. Together, we are building a brighter future for women!
         </p>
-        <a href="index.html" class="inline-block bg-gold text-royal-purple font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-75">
+        <a href="index.html"
+           onclick="gtag('event', 'back_to_home_click', { 'event_category': 'navigation', 'event_label': 'Back to Home Page Button Clicked' });"
+           class="inline-block bg-gold text-royal-purple font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-75">
             Back to Home Page
         </a>
     </div>
