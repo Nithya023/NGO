@@ -8,7 +8,7 @@
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    'https://www.googletagmanager.com/gtag/js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-P9TC7VLB');</script>
     <!-- End Google Tag Manager -->
     <!-- Tailwind CSS CDN -->
@@ -51,28 +51,34 @@
         const amount = form.elements['amount'].value;
         const paymentMode = form.elements['payment_mode'].value;
 
-        // Trigger GA4 event for form submission
+        // Define a function to submit the form
+        const submitForm = () => {
+            form.submit();
+        };
+
+        // Track form submission event with a callback
         gtag('event', 'form_submission', {
           'form_name': 'volunteer_donation_form',
           'event_category': 'form',
-          'event_label': 'Volunteer or Donation Form Submitted'
+          'event_label': 'Volunteer or Donation Form Submitted',
+          'event_callback': () => {
+            // This callback fires AFTER 'form_submission' event is processed
+            if (amount && parseFloat(amount) > 0) {
+              // If donation, track donation_click with its own callback
+              gtag('event', 'donation_click', {
+                'value': parseFloat(amount),
+                'currency': 'USD', // You can change currency as needed
+                'payment_mode': paymentMode,
+                'event_category': 'ecommerce',
+                'event_label': 'Donation Made',
+                'event_callback': submitForm // Submit form after donation_click is processed
+              });
+            } else {
+              // If no donation, submit form directly after form_submission
+              submitForm();
+            }
+          }
         });
-
-        // Trigger GA4 event for donation click if amount is present
-        if (amount && parseFloat(amount) > 0) {
-          gtag('event', 'donation_click', {
-            'value': parseFloat(amount),
-            'currency': 'USD', // You can change currency as needed
-            'payment_mode': paymentMode,
-            'event_category': 'ecommerce',
-            'event_label': 'Donation Made'
-          });
-        }
-
-        // Allow time for GA4 event to be sent, then submit the form
-        setTimeout(() => {
-          form.submit();
-        }, 300); // 300ms delay
       }
     </script>
 </head>
