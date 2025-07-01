@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awareness Page - HopeBridge Foundation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom colors for Tailwind */
+        :root {
+            --color-baby-pink: #FFC0CB;   /* Baby Pink */
+            --color-white: #FFFFFF;      /* White */
+            --color-royal-purple: #6A1B9A; /* Royal Purple */
+            --color-gold: #FFD700;       /* Gold (Accent) */
+        }
+        .bg-baby-pink { background-color: var(--color-baby-pink); }
+        .bg-royal-purple { background-color: var(--color-royal-purple); }
+        .bg-gold { background-color: var(--color-gold); }
+        .text-baby-pink { color: var(--color-baby-pink); }
+        .text-royal-purple { color: var(--color-royal-purple); }
+        .text-gold { color: var(--color-gold); }
+        .border-baby-pink { border-color: var(--color-baby-pink); }
+        .border-royal-purple { border-color: var(--color-royal-purple); }
+        .border-gold { border-color: var(--color-gold); }
+
+        /* Custom font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-baby-pink flex flex-col min-h-screen items-center justify-center p-4">
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-3xl w-full text-left transform transition-all duration-300 hover:scale-105">
+
+        <!-- Headline -->
+        <h1 class="text-4xl md:text-5xl font-extrabold text-royal-purple mb-6 text-center leading-tight">
+            HopeBridge Foundation: Empowering Women Through Education
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-8 text-center leading-relaxed">
+            Investing in women's education is investing in a brighter future for all. Join us in breaking barriers and building opportunities.
+        </p>
+        <img src="https://placehold.co/600x300/FFC0CB/6A1B9A?text=Women+Education" alt="Illustration of women learning and growing through education" class="w-full h-auto rounded-xl mb-8 shadow-md">
+
+        <!-- Problem Statement -->
+        <section class="mb-10">
+            <h2 class="text-3xl font-bold text-royal-purple mb-4">The Challenge: Barriers to Women's Education</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Globally, millions of girls and women face significant obstacles to accessing quality education. These barriers include poverty, cultural norms, early marriage, gender-based violence, and a lack of safe learning environments. In many regions, girls are disproportionately affected by school closures and lack of resources, perpetuating cycles of illiteracy and limited opportunities. This systemic disadvantage not only impacts individual lives but also hinders the progress of entire communities and nations.
+            </p>
+        </section>
+
+        <!-- Impact -->
+        <section class="mb-10">
+            <h2 class="text-3xl font-bold text-royal-purple mb-4">Profound Impact: The Power of Educated Women</h2>
+            <p class="text-gray-700 leading-relaxed">
+                Educating women has a transformative ripple effect. When girls and women receive an education, they are more likely to:
+            </p>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 ml-4 mt-4">
+                <li>Lead healthier lives and have healthier families.</li>
+                <li>Earn higher incomes, contributing to economic growth and poverty reduction.</li>
+                <li>Participate more actively in political and community decision-making.</li>
+                <li>Delay marriage and childbirth, leading to smaller, healthier families.</li>
+                <li>Educate their own children, breaking intergenerational cycles of illiteracy.</li>
+                <li>Become innovators and leaders, driving social and technological progress.</li>
+            </ul>
+            <p class="text-gray-700 leading-relaxed mt-4">
+                Investing in women's education is one of the most effective ways to achieve sustainable development and gender equality.
+            </p>
+        </section>
+
+        <!-- Real Stories -->
+        <section class="mb-10">
+            <h2 class="text-3xl font-bold text-royal-purple mb-4">Voices of Hope: Real Stories of Transformation</h2>
+            <div class="space-y-6">
+                <div class="bg-baby-pink p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-800">"Because of the support I received, I was able to finish school and become the first woman in my family to attend university. Now, I'm a teacher, inspiring other girls in my village." - Aisha K.</p>
+                </div>
+                <div class="bg-baby-pink p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-800">"Education gave me the confidence and skills to start my own small business. It's not just about me; my success helps my entire family and community thrive." - Maria P.</p>
+                </div>
+                <div class="bg-baby-pink p-6 rounded-lg shadow-md">
+                    <p class="italic text-gray-800">"Our community saw a significant drop in child mortality and an increase in economic activity after we focused on providing educational opportunities for women. The impact is undeniable." - Dr. Lena S., Community Health Advocate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Help -->
+        <section class="mb-10">
+            <h2 class="text-3xl font-bold text-royal-purple mb-4">How You Can Help Empower Women Through Education</h2>
+            <ul class="list-disc list-inside text-gray-700 space-y-2 leading-relaxed">
+                <li><strong>Donate:</strong> Your financial contribution directly supports scholarships, school supplies, and safe learning environments for girls and women.</li>
+                <li><strong>Volunteer:</strong> Dedicate your time to mentor, tutor, or assist with our educational programs on the ground or remotely.</li>
+                <li><strong>Spread Awareness:</strong> Share the importance of women's education on social media and within your networks. Advocate for policies that promote gender equality in education.</li>
+                <li><strong>Become an Advocate:</strong> Join our campaigns to influence policymakers and support initiatives that remove barriers to education for women and girls.</li>
+                <li><strong>Partner with Us:</strong> Businesses and organizations can collaborate with HopeBridge Foundation to create sustainable educational programs.</li>
+            </ul>
+        </section>
+
+        <div class="text-center mt-8">
+            <a href="signup.html" class="inline-block bg-gold text-royal-purple font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-75">
+                Volunteer Signup
+            </a>
+        </div>
+    </div>
+</body>
+</html>
