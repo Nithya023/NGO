@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P9TC7VLB');</script>
-<!-- End Google Tag Manager -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Volunteer Signup & Donation - HopeBridge Foundation</title>
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-P9TC7VLB');</script>
+    <!-- End Google Tag Manager -->
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
@@ -36,12 +36,51 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-family: 'Inter', sans-serif;
         }
     </style>
+    <!-- Google Analytics 4 (GA4) Tracking Script -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_MEASUREMENT_ID"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'YOUR_GA4_MEASUREMENT_ID'); // Replace with your GA4 Measurement ID
+
+      function trackFormSubmission(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const form = event.target;
+        const amount = form.elements['amount'].value;
+        const paymentMode = form.elements['payment_mode'].value;
+
+        // Trigger GA4 event for form submission
+        gtag('event', 'form_submission', {
+          'form_name': 'volunteer_donation_form',
+          'event_category': 'form',
+          'event_label': 'Volunteer or Donation Form Submitted'
+        });
+
+        // Trigger GA4 event for donation click if amount is present
+        if (amount && parseFloat(amount) > 0) {
+          gtag('event', 'donation_click', {
+            'value': parseFloat(amount),
+            'currency': 'USD', // You can change currency as needed
+            'payment_mode': paymentMode,
+            'event_category': 'ecommerce',
+            'event_label': 'Donation Made'
+          });
+        }
+
+        // Allow time for GA4 event to be sent, then submit the form
+        setTimeout(() => {
+          form.submit();
+        }, 300); // 300ms delay
+      }
+    </script>
 </head>
 <body class="bg-baby-pink flex flex-col min-h-screen items-center justify-center p-4">
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9TC7VLB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9TC7VLB"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-xl w-full transform transition-all duration-300 hover:scale-105">
         <h1 class="text-3xl md:text-4xl font-extrabold text-royal-purple mb-6 text-center">
             Join Our Volunteer Team or Make a Donation!
@@ -50,7 +89,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             Your time, effort, or contribution can bring immense joy and positive change. Please fill out the form below.
         </p>
 
-        <form action="thankyou.html" method="GET" class="space-y-6">
+        <form action="thankyou.html" method="GET" onsubmit="trackFormSubmission(event)" class="space-y-6">
             <div>
                 <label for="name" class="block text-gray-700 text-sm font-semibold mb-2">Full Name</label>
                 <input type="text" id="name" name="name" placeholder="John Doe" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-baby-pink focus:border-transparent transition duration-200" required>
