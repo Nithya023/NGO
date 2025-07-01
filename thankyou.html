@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You! - HopeBridge Foundation</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom colors for Tailwind */
+        :root {
+            --color-baby-pink: #FFC0CB;   /* Baby Pink */
+            --color-white: #FFFFFF;      /* White */
+            --color-royal-purple: #6A1B9A; /* Royal Purple */
+            --color-gold: #FFD700;       /* Gold (Accent) */
+        }
+        .bg-baby-pink { background-color: var(--color-baby-pink); }
+        .bg-royal-purple { background-color: var(--color-royal-purple); }
+        .bg-gold { background-color: var(--color-gold); }
+        .text-baby-pink { color: var(--color-baby-pink); }
+        .text-royal-purple { color: var(--color-royal-purple); }
+        .text-gold { color: var(--color-gold); }
+        .border-baby-pink { border-color: var(--color-baby-pink); }
+        .border-royal-purple { border-color: var(--color-royal-purple); }
+        .border-gold { border-color: var(--color-gold); }
+
+        /* Custom font */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-baby-pink flex flex-col min-h-screen items-center justify-center p-4">
+    <div class="bg-white p-8 md:p-12 rounded-2xl shadow-xl max-w-2xl w-full text-center transform transition-all duration-300 hover:scale-105">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-royal-purple mb-6 leading-tight">
+            Thank You for Your Support!
+        </h1>
+        <p class="text-lg md:text-xl text-gray-700 mb-8 leading-relaxed">
+            Your commitment to empowering women through education is truly inspiring. Whether you've signed up to volunteer or are considering a donation, your generosity makes a profound difference in our community.
+        </p>
+        <div class="text-6xl mb-8 animate-bounce text-gold">✨💖😊</div>
+        <p class="text-md md:text-lg text-gray-600 mb-8">
+            We will be in touch shortly with more information. Together, we are building a brighter future for women!
+        </p>
+        <a href="index.html" class="inline-block bg-gold text-royal-purple font-bold py-3 px-8 rounded-full shadow-lg hover:bg-yellow-500 transition duration-300 ease-in-out transform hover:-translate-y-1 hover:scale-105 focus:outline-none focus:ring-4 focus:ring-gold focus:ring-opacity-75">
+            Back to Home Page
+        </a>
+    </div>
+</body>
+</html>
